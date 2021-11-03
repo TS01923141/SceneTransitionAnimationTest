@@ -19,17 +19,19 @@ class MainActivity : AppCompatActivity() {
 
         binding.textViewMain.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
-            //轉場動畫1 -> 爆炸效果
-//            intent.putExtra("type", "explode")
-            //轉場動畫2 -> view接續效果
-            val activityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(
-                this,
-                Pair(binding.textViewMain, "textView")
-            )
-            startActivity(
-                intent,
-                activityOptions.toBundle()
-            )
+//            //轉場動畫1 -> 爆炸效果
+////            intent.putExtra("type", "explode")
+//            //轉場動畫2 -> view接續效果
+//            val activityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(
+//                this,
+//                Pair(binding.textViewMain, "textView")
+//            )
+//            startActivity(
+//                intent,
+//                activityOptions.toBundle()
+//            )
+            //預設manifest設定的CustomActivityAnimation轉場動畫效果
+            startActivity(intent)
         }
     }
 }
